@@ -1,0 +1,194 @@
+/* src/LandingPage.css */
+@import '@arcgis/core/assets/esri/themes/light/main.css';
+@import '@esri/calcite-components/dist/calcite/calcite.css';
+.landing-page-container {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-image: url('./map.jpg');
+  background-color: #008CBA;
+  color: #333;
+}
+
+.header {
+  background-color: #360f69;
+  color: white;
+  padding: 20px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: #333;
+  overflow: hidden;
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: #575757;
+}
+
+.hero-section {
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+}
+
+.cta-buttons {
+  margin-top: 20px;
+}
+
+.cta-buttons button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.primary {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.secondary {
+  background-color: #008CBA;
+  color: white;
+}
+
+.about-section, .how-to-use-section, .services-section, .auth-section, .updates-section {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+/* Dashboard */
+.dashboard {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.dashboard-sidebar {
+  width: 250px;
+  background-color: #34495e;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.dashboard-sidebar h3 {
+  margin-top: 0;
+}
+
+.dashboard-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dashboard-sidebar ul li {
+  margin: 15px 0;
+}
+
+.dashboard-sidebar ul li a {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.dashboard-sidebar ul li a:hover {
+  color: #1abc9c;
+}
+
+.dashboard-main {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-main h2 {
+  margin-top: 0;
+}
+
+/* Forms */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  margin-top: 0;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container button {
+  padding: 10px 20px;
+  background-color: #1abc9c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #16a085;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #34495e;
+  color: #fff;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your App - LAMS Frontend Application" />
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://js.arcgis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <title>Your App</title>
+    
+    <!-- ArcGIS CSS with fallback -->
+    <link id="arcgis-css" rel="stylesheet" href="https://js.arcgis.com/4.28/@arcgis/core/assets/esri/themes/light/main.css" />
+    <link rel="stylesheet" href="/assets/esri/themes/light/main.css" data-env="development" />
+    
+    <!-- Module preload for better performance -->
+    <link rel="modulepreload" href="/src/main.jsx">
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- External scripts -->
+    <script id="arcgis-script" src="https://js.arcgis.com/4.28/" data-env="production"></script>
+    <script id="google-maps-script" src="" data-env="production" data-key="VITE_GOOGLE_MAPS_API_KEY"></script>
+    
+    <!-- Main application script -->
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Environment handling script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const isProduction = import.meta.env.PROD;
+        
+        // Update document title from environment if available
+        document.title = import.meta.env.VITE_APP_TITLE || document.title;
+        
+        // Handle ArcGIS resources
+        if (isProduction) {
+          document.querySelector('link[data-env="development"]')?.remove();
+        } else {
+          document.getElementById('arcgis-css')?.remove();
+          document.getElementById('arcgis-script')?.remove();
+        }
+        
+        // Handle Google Maps
+        const gmapsScript = document.getElementById('google-maps-script');
+        if (gmapsScript) {
+          if (isProduction && import.meta.env.VITE_GOOGLE_MAPS_API_KEY) {
+            gmapsScript.src = `https://maps.googleapis.com/maps/api/js?key=${
+              import.meta.env.VITE_GOOGLE_MAPS_API_KEY
+            }&libraries=places`;
+          } else {
+            gmapsScript.remove();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
